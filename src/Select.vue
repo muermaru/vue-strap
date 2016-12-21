@@ -263,7 +263,9 @@ export default {
           this.toggle()
         }
       } else {
+        var tmp = this.value
         this.value = !~['', null, undefined].indexOf(v) ? v : alt
+        if (this.value === tmp) { this.value = null }
         this.toggle()
       }
     },
